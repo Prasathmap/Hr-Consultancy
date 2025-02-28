@@ -6,10 +6,10 @@ const EventPage = () => {
   return (
     <>
       {/* Hero Section */}
-            <header className="relative h-80 flex flex-col items-center justify-center bg-azure overflow-hidden">
+            <header className="relative h-40 flex flex-col items-center justify-center bg-azure overflow-hidden">
             {/* Animated Text with Gradient Effect */}
             <motion.h1
-              className="relative text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
+              className="relative text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500  to-blue-500"
               initial={{ opacity: 0, y: 30, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}

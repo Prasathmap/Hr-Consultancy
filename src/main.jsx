@@ -5,12 +5,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./Components/About.jsx";
 import Home from "./Components/Home.jsx";
 import "./index.css";
-import Blog from "./Components/Blog.jsx";
 import ContactUs from "./Components/ContactUs.jsx";
 import Ourservices from "./Components/Ourservices.jsx";
 import Event from "./Components/Event.jsx"
 import Privacy from "./Components/Privacy.jsx";
-
+import Certificate from "./Components/Certificate.jsx"
 
 const router = createBrowserRouter([
   {
@@ -26,10 +25,7 @@ const router = createBrowserRouter([
         path: "/about-us",
         element: <About />,
       },
-      {
-        path: "/blog",
-        element: <Blog />,
-      },
+     
       {
         path: "/contact-us",
         element: <ContactUs />,
@@ -42,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/our-services",
         element: <Ourservices />,
+      },
+      {
+        path: "/Certificate",
+        element: <Certificate />,
       },
       
       {

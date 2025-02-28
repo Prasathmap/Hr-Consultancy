@@ -1,19 +1,16 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import FaqAccordion from "../FaqAccordion";
 
 const Faq = () => {
   return (
     <div>
       <div className=" h-44  bg-red-400 flex relative ">
-        <img src="/parallax-5.jpg" className=" w-full object-cover" />
         <div className="absolute text-white text-2xl font-semibold flex flex-col h-full justify-center text-center items-center w-full">
           <p>India's Leading Consultancy In Madurai </p>
           <p>FAQ</p>
         </div>
       </div>
-
-      
 
       <div className="gap-4 flex sm:flex-row flex-col  sm:px-10">
         <div className=" py-4  sm:w-1/2">
@@ -42,39 +39,30 @@ const Faq = () => {
         </div>
 
         <div className=" sm:w-1/2 flex flex-col items-start  justify-center gap-8 px-2 py-8">
-          <p className="font-bold flex w-full justify-center  text-xl">
-            Ask us question
-          </p>
-
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="outline-none p-3 rounded-sm w-full border-b border-gray-300"
-          />
-          <div className="flex flex-row  w-full justify-center gap-6">
-            <input
-              type="text"
-              placeholder="Email Adderss"
-              className="outline-none p-3 rounded-sm w-1/2 border-b border-gray-300"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="outline-none p-3 rounded-sm w-1/2 border-b border-gray-300 "
-            />
-          </div>
-          <textarea
-            name=""
-            id=""
-            placeholder="Your Message"
-            cols="30"
-            className="outline-none w-full h-36 border-b border-gray-300 p-3"
-            rows="10"
-          ></textarea>
-          <div className=" flex w-full justify-end">
-            <button className="bg-indigo-500 py-3 px-12 rounded-lg hover:bg-purple-500 duration-300 text-white text-2xl font-semibold">
-              Send Message
-            </button>
+        <motion.h1
+                  className="relative text-2xl sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500  to-blue-500"
+                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+                >
+                  Our Location
+                </motion.h1>
+                <motion.div
+                    className=" h-1 w-24 bg-gradient-to-r from-pink-500 via-#2c83ec-500 to-#94d8ff-500 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                />
+          <div className="flex justify-center">
+          
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2362696299624!2d78.11219407479234!3d9.914269990186838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c581bf342461%3A0xa45cd5d8521412e7!2sFriends%20Mahal!5e0!3m2!1sen!2sin!4v1740716858831!5m2!1sen!2sin"              width="800px"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>

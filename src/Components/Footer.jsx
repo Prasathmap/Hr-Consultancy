@@ -26,7 +26,7 @@ function Footer() {
             <img
               src="/logo.png"
               alt="Logo"
-              className="w-20 sm:w-auto max-h-24 mb-6 sm:mb-4"
+              className="w-20 sm:w-80 max-h-25 mb-6 sm:mb-4"
             />
             <div className="text-white text-center sm:text-left flex flex-col gap-4">
               <div className="flex items-center gap-2 justify-center sm:justify-start">
@@ -42,12 +42,18 @@ function Footer() {
 
               <div className="flex items-center gap-2 justify-center sm:justify-start">
                 <FaPhoneAlt className="text-yellow-400 text-xl" />
-                <p className="text-sm sm:text-base">+91 9876543210</p>
+                <a href="tel:+918825577277" className="text-sm sm:text-base text-blue-500 hover:underline">
+                    +91 88255 77277
+                </a>
+
               </div>
 
               <div className="flex items-center gap-2 justify-center sm:justify-start">
                 <BiLogoGmail className="text-yellow-400 text-xl" />
-                <p className="text-sm sm:text-base">brighthrmdu@gmail.com</p>
+                <a href="mailto:brighthrmdu@gmail.com" className="text-sm sm:text-base text-blue-500 hover:underline">
+                brighthrmdu@gmail.com
+              </a>
+
               </div>
 
               <div className="text-white flex justify-center sm:justify-start flex-wrap gap-3 pt-3">
@@ -75,14 +81,7 @@ function Footer() {
                 >
                   <FaYoutube size={25} />
                 </a>
-                <a
-                  href="https://maps.app.goo.gl/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gray-100"
-                >
-                  <SiGooglemaps size={25} />
-                </a>
+
                 <a
                   href="https://www.pinterest.com/"
                   target="_blank"
@@ -119,11 +118,17 @@ function Footer() {
               <Link to={"/"}>Home</Link>
             </a>
             <a href="#" className="text-gray-400 hover:text-gray-100 transition duration-300">
-              <Link to={"/about"}>About us</Link>
+              <Link to={"/about-us"}>About us</Link>
             </a>
             <a href="#" className="text-gray-400 hover:text-gray-100 transition duration-300">
-              <Link to={"/blog"}>Blog</Link>
+              <Link to={"/about-us"}>Our-Services</Link>
             </a>
+            <a href="#" className="text-gray-400 hover:text-gray-100 transition duration-300">
+              <Link to={"/event"}>Events</Link>
+            </a>
+            {/* <a href="#" className="text-gray-400 hover:text-gray-100 transition duration-300">
+              <Link to={"/blog"}>Blog</Link>
+            </a> */}
             <a href="#" className="block text-gray-400 hover:text-gray-100 transition duration-300">
               <Link to={"/contact-us"}>Contact Us</Link>
             </a>

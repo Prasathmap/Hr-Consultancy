@@ -1,56 +1,137 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const images = [
-  "/HeroCarousel-pics/H1.png",
-  "/HeroCarousel-pics/H2.avif",
-  "/HeroCarousel-pics/H3.avif",
+const slides = [
+  {
+    title: "Bright HR Consultancy",
+    description: "A specialized HR consultancy providing comprehensive workforce solutions.",
+    img: "/HeroCarousel-pics/H2.png",
+    link: "/about-us",
+    buttonText: "About us"
+  },
+  {
+    title: "HR Management",
+    description: "Development of second-level leaders in the organization to play greater roles.",
+    img: "/HeroCarousel-pics/H2.webp",
+    link: "/contact-us",
+    buttonText: "Contact us"
+  },
+  {
+    title: "Fighting Spill Response",
+    description: "Improvement of attitude, skills, knowledge, and sense of belonging among employees.",
+    img: "/HeroCarousel-pics/H4.webp",
+    link: "/our-service",
+    buttonText: "Our Services"
+  }
 ];
 
-const HeroCarousel = () => {
-  const [index, setIndex] = useState(0);
+const Slider = () => {
+  const [current, setCurrent] = useState(0);
+  const totalSlides = slides.length;
+  const timeTrans = 4000;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+      setCurrent((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
+    }, timeTrans);
     return () => clearInterval(interval);
-  }, []);
+  }, [totalSlides]);
 
   return (
-    <div className="relative w-full h-[400px] flex items-center overflow-hidden bg-azure">
-      <div className="w-1/2 p-10 flex flex-col justify-center overflow-hidden">
-        <h1 className="text-4xl font-bold mb-4 flex items-center gap-4">
-          <motion.img
-            key={images[index]}
-            src={images[index]}
-            alt="Icon"
-            className="w-10 h-10 object-cover rounded-full"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            transition={{ duration: 1 }}
-          />
-          Welcome to Our Platform
-        </h1>
-        <p className="text-lg text-gray-700">Discover amazing content and experiences with us. Stay tuned for updates and more!</p>
-      </div>
-      <div className="w-1/2 h-full">
-        <AnimatePresence>
-          <motion.img
-            key={images[index]}
-            src={images[index]}
-            alt="Hero Slide"
-            className="w-full h-full object-cover rounded-lg"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </AnimatePresence>
-      </div>
-    </div>
+    <header>
+      <section style={{ position: "relative", width: "100%", height: "85vh", overflow: "hidden" }}>
+        <ul style={{ padding: 0, margin: 0, listStyle: "none", width: "100%", height: "100%" }}>
+          {slides.map((slide, index) => (
+            <li
+              key={index}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url(${slide.img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundBlendMode: "overlay",
+                transition: "opacity 1s ease-in-out",
+                opacity: index === current ? 1 : 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                padding: "2rem",
+                boxSizing: "border-box"
+              }}
+            >
+              <article style={{ maxWidth: "50%", color: "#fff", zIndex: 11, textShadow: "2px 2px 10px rgba(0,0,0,0.5)" }}>
+                <h3 style={{ fontSize: "3.5em", fontWeight: 700, marginBottom: "0.5rem" }}>
+                  <em style={{ 
+                    background: "linear-gradient(145deg,#ff2f09,#c24a4e)", 
+                    WebkitTextFillColor: "transparent", 
+                    WebkitBackgroundClip: "text" 
+                  }}>
+                    {slide.title}
+                  </em>
+                </h3>
+                <p style={{ color: "rgba(7, 7, 7, 0.8)", fontWeight: 300, fontSize: "1.2em", marginBottom: "1rem" }}>
+                  {slide.description}
+                </p>
+                <a 
+                  href={slide.link} 
+                  style={{
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    padding: "10px 20px",
+                    borderRadius: "25px",
+                    backgroundColor: "#ff2f09",
+                    color: "#FFF",
+                    fontSize: "1.2em",
+                    position: "relative",
+                    transition: "all 0.3s ease-in-out",
+                    boxShadow: "0 4px 15px rgba(255, 47, 9, 0.3)"
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = "#c70000";
+                    e.target.style.boxShadow = "0 6px 20px rgba(199, 0, 0, 0.5)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = "#ff2f09";
+                    e.target.style.boxShadow = "0 4px 15px rgba(255, 47, 9, 0.3)";
+                  }}
+                >
+                  {slide.buttonText} 
+                  <span style={{ fontSize: "1.2em", transition: "transform 0.3s ease" }}>➜</span>
+                </a>
+              </article>
+            </li>
+          ))}
+        </ul>
+        
+        {/* Dots Navigation */}
+        <aside style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", gap: "0.5rem", zIndex: 10 }}>
+          {slides.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => setCurrent(index)}
+              style={{
+                display: "inline-block",
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                backgroundColor: index === current ? "#ff2f09" : "#FFF",
+                cursor: "pointer",
+                transition: "transform .3s, background-color 0.3s",
+                transform: index === current ? "scale(1.5)" : "scale(1)"
+              }}
+            ></span>
+          ))}
+        </aside>
+      </section>
+    </header>
   );
 };
 
-export default HeroCarousel;
+export default Slider;

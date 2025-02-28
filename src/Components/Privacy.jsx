@@ -23,7 +23,7 @@ const Privacy = () => {
           <span className="text-4xl font-bold text-indigo-800 ">
             Privacy Policy
           </span>
-          <span>Effective date: November 28, 2018</span>
+          <span>Effective date: November 31, 2025</span>
 
           <span className="text-gray-500 ">
             ACS ("us", "we", or "our") operates the website (the "Service").

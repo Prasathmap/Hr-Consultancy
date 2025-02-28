@@ -3,15 +3,15 @@ import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 
 
-const SoftwareDevelopment = () => {
+const Ourservices = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="font-sans">
+    <div>
     
-    <header className="relative h-60 flex flex-col items-center justify-center bg-azure overflow-hidden">
+    <header className="relative h-40 flex flex-col items-center justify-center bg-azure overflow-hidden">
     {/* Animated Text with Gradient Effect */}
       <motion.h1
         className="relative text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500  to-blue-500"
@@ -31,13 +31,13 @@ const SoftwareDevelopment = () => {
       />
     </header>
 
-      <section className="px-6 text-center">
+      <section className="px-6 text-center py-16">
         <h2 className="text-4xl font-bold text-yellow-600">Who We Are Right Fit For?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
           {[
-            { title: "Startups", desc: "We offer dedicated teams with the right skill sets to develop a prototype or an MVP." },
-            { title: "Mid and Large Enterprises", desc: "We provide full software product development services for scaling your idea." },
-            { title: "Organizations Going Digital", desc: "We help businesses transform digitally by developing scalable software solutions." },
+            { title: "Startups", desc: "Startups need agile and cost-effective HR solutions that support growth, streamline hiring, and manage a small but dynamic team efficiently.." },
+            { title: "Mid and Large Enterprises", desc: "We provide full product development services for scaling your idea." },
+            { title: "Organizations Going Digital", desc: "As businesses transform digitally, HR must adapt to remote work, AI-driven recruitment, and advanced engagement strategies" },
           ].map((item, index) => (
             <div key={index} className="p-6 bg-gray-100 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
@@ -117,16 +117,16 @@ const SoftwareDevelopment = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
             {
-              title: "SaaS Application Development",
-              desc: "Consulting, building custom features, UI components, and API integration.",
+              title: "Employee Lifecycle Management🔄 ",
+              desc: "From hiring to retirement, HR solutions streamline the entire employee journey..",
             },
             {
-              title: "Custom Software Development",
-              desc: "Develop tailored software solutions that fit all your business needs.",
+              title: "Compliance & Risk Management ⚖️",
+              desc: "Ensure legal compliance and mitigate risks with automated HR tools..",
             },
             {
-              title: "Enterprise Product Development",
-              desc: "Transform ideas into products that increase market share and revenue.",
+              title: "Workforce Analytics & AI Insights 📊",
+              desc: "Leverage data-driven decisions to enhance workforce productivity.",
             },
           ].map((service, index) => (
             <div key={index} className="p-6 bg-gray-200 rounded-lg shadow-md hover:shadow-xl transition">
@@ -142,4 +142,4 @@ const SoftwareDevelopment = () => {
   );
 };
 
-export default SoftwareDevelopment;
+export default Ourservices;

@@ -74,7 +74,7 @@ const Blog = () => {
 
       <div>
        {/* Hero Section */}
-       <header className="relative h-80 flex flex-col items-center justify-center bg-azure overflow-hidden">
+       <header className="relative h-40 flex flex-col items-center justify-center bg-azure overflow-hidden">
             {/* Animated Text with Gradient Effect */}
             <motion.h1
               className="relative text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"

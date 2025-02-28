@@ -11,9 +11,17 @@ export default function BrightHRSection() {
         transition={{ duration: 0.8 }}
         className="md:w-1/2 text-center md:text-left"
       >
-        <h1 className="text-3xl font-bold text-gray-800">
-          We Provide Solutions For You
-        </h1>
+      <motion.h1
+           className="relative text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500  to-blue-500"
+           initial={{ opacity: 0, y: 30, scale: 0.8 }}
+           animate={{ opacity: 1, y: 0, scale: 1 }}
+           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+      >
+      We Provide Solutions For You
+      </motion.h1>
+              
+        
+       
         <p className="mt-4 text-lg text-gray-600">
           At Bright, we are proud to be an MSME-certified organization, dedicated to excellence in human resources management. Our certification underscores our commitment to delivering exceptional services that empower businesses to build and sustain a talented workforce.
         </p>
@@ -32,10 +40,25 @@ export default function BrightHRSection() {
         <img src="/Awards/C1.jpg" alt="HR Solutions" className="w-full max-w-lg rounded-lg shadow-lg" />
       </motion.div>
     </div>
+
+
     <container className="marque-wrapper home-wrapper-2 py-5 bg-gradient-to-r from-blue-500 to-purple-600 text-orange rounded-lg shadow-lg">
-    <h1 className="text-4xl font-extrabold text-center mb-6 drop-shadow-lg">
-        Our Clients
-      </h1>
+   <div className="flex flex-col items-center text-center mb-10">
+         <motion.h1
+           className="relative text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500  to-blue-500"
+           initial={{ opacity: 0, y: 30, scale: 0.8 }}
+           animate={{ opacity: 1, y: 0, scale: 1 }}
+           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+         >
+           Our Clients
+         </motion.h1>
+         <motion.div
+            className="mt-2 h-1 w-24 bg-gradient-to-r from-pink-500 via-#2c83ec-500 to-#94d8ff-500 rounded-full"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+        />   
+         </div>
       <div className="row">
         <div className="col-12">
           <div className="marquee-inner-wrapper card-wrapper overflow-hidden border border-white p-4 rounded-lg">
@@ -46,8 +69,8 @@ export default function BrightHRSection() {
               style={{ display: 'flex', width: 'max-content' }}
             >
               {[...Array(16)].map((_, index) => (
-                <div key={index} className="mx-4 w-20 h-25 transform hover:scale-110 transition-transform duration-300">
-                  <img src={`/Brand/B${(index % 8) + 1}.png`} alt="brand" className="rounded-lg shadow-md" />
+                <div key={index} className="mx-4 w-28 h-50 transform hover:scale-110 transition-transform duration-300">
+                  <img src={`/Brand/B${(index % 7) + 1}.png`} alt="brand" className="rounded-lg shadow-md" />
                 </div>
               ))}
             </motion.div>
