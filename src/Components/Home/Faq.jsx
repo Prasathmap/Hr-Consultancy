@@ -53,16 +53,15 @@ const Faq = () => {
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                 />
-          <div className="flex justify-center">
-          
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2362696299624!2d78.11219407479234!3d9.914269990186838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c581bf342461%3A0xa45cd5d8521412e7!2sFriends%20Mahal!5e0!3m2!1sen!2sin!4v1740716858831!5m2!1sen!2sin"              width="800px"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+            <div className="flex justify-center w-full">
+                <iframe
+                  title="Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.354167011909!2d78.12283957571176!3d9.925200790136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c581bf342461%3A0xa45cd5d8521412e7!2sFriends%20Mahal!5e0!3m2!1sen!2sin!4v1648561234567!5m2!1sen!2sin"
+                  className="w-full sm:w-[340px] h-[300px] sm:h-[400px]"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
           </div>
         </div>
       </div>
